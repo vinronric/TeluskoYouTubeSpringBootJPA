@@ -10,10 +10,9 @@
 
    Add Alien
   <form action="/addAlien" method="post" >
-   <center>${success}</center>
    <br>
-     <input type="text" name="aid"><br>
-     <input type="text" name="aname"><br>
+     <input type="hidden" name="aid" ><br>
+     Alien Name : <input type="text" name="aname"><br>
      <input type="submit"><br>
        
   </form>

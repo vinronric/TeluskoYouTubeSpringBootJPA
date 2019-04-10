@@ -22,14 +22,17 @@ public class AlienController {
 	}
 	
 	@RequestMapping("/addAlien")
-	public ModelAndView addAlien(Alien alien,ModelAndView mv, @RequestParam String aid, @RequestParam String aname) {
+	public ModelAndView addAlien(ModelAndView mv, @RequestParam("aid") String aid,@RequestParam("aname") String aname ) {
 		System.out.println("addAlien() method is called in AlienController");
-		System.out.println("aid : " + aid);
-		System.out.println("aname : " + aname);
-		System.out.println("alien : " + alien);
+		Alien alien=new Alien();
+		if(aid.equals("")) {
+			System.out.println("aid is blank");
+			alien.setAid(0);
+		}
+		alien.setAname(aname);
 		alienService.addAlien(alien);
 		mv.addObject("success", "Alien Successfully Saved to MYSQL DB");
-		mv.setViewName("home");
+		mv.setViewName("success");
         return mv;
 	}
 	
