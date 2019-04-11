@@ -7,8 +7,8 @@
 <title>Add Alien</title>
 </head>
 <body>
-
-   Add Alien
+   <a href="http://localhost:8087/getAliens">View All Aliens List</a>
+   <h1><center>Add Alien<center></h1>
   <form action="/addAlien" method="post" >
    <br>
      <input type="hidden" name="aid" ><br>

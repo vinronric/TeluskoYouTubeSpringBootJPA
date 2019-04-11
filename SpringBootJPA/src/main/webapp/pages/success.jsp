@@ -9,6 +9,7 @@
 <body>
    <form>
        <center>${success}</center>
+       <a href="/getAliens" method="get">View All Aliens</a>
    </form>
 </body>
 </html>
