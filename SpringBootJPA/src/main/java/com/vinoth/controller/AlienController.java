@@ -27,6 +27,7 @@ public class AlienController {
 	@RequestMapping("/addAlien")
 	public ModelAndView addAlien(ModelAndView mv, @RequestParam(value="aid", defaultValue ="0") int aid,@RequestParam("aname") String aname ) {
 		System.out.println("addAlien() method is called in AlienController");
+		System.out.println("alienService : " + alienService);
 		Alien alien=new Alien();
 		alien.setAid(0);
 		alien.setAname(aname);
