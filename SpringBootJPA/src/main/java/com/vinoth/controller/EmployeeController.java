@@ -18,11 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.vinoth.demo.Alien;
 import com.vinoth.demo.Employee;
+import com.vinoth.demo.User;
 import com.vinoth.service.AlienService;
 import com.vinoth.service.EmployeeService;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin()
 @RestController
 @RequestMapping({ "/employees" })
 public class EmployeeController {
@@ -41,6 +43,12 @@ public class EmployeeController {
 		System.out.println("firstPage() is called in EmployeeController : employees " + employees);
 		
 		return employees;
+	}
+	
+	@GetMapping(produces = "application/json")
+	@RequestMapping({ "/validateLogin" })
+	public User validateLogin() {
+		return new User("User successfully authenticated");
 	}
 	
 	@DeleteMapping(path = { "/{id}" })
